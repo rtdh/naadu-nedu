@@ -39,7 +39,7 @@ $(document).ready(function() {
 				var sch = $('#school');
 				console.log(response.schools)
 				sch.html('')
-				//sch.html(`<option>Select Category</option>`)
+				sch.html(`<option>Select School</option>`)
 				response.schools.forEach(function(school) {
 					
 					sch.append(
@@ -51,7 +51,7 @@ $(document).ready(function() {
 		
 	})
 	
-	
+		
 	$('#naduneduForm').on('submit', function(e) {
 		
 		e.preventDefault()
