@@ -39,7 +39,7 @@ $(document).ready(function() {
 				var sch = $('#school');
 				console.log(response.schools)
 				sch.html('')
-				sch.html(`<option>Select Category</option>`)
+				//sch.html(`<option>Select Category</option>`)
 				response.schools.forEach(function(school) {
 					
 					sch.append(
@@ -52,9 +52,30 @@ $(document).ready(function() {
 	})
 	
 	
-	$('#naduneduBtn').on('click', function(e) {
+	$('#naduneduForm').on('submit', function(e) {
 		
 		e.preventDefault()
+		
+		// Today Date
+		
+		var date=new Date();  
+		var day=date.getDate();  
+		var month=date .getMonth()+1;
+		
+		if (day < 10) {
+			day = '0' + day
+		}
+		if (month < 10) {
+			month = '0' + month
+		}
+		
+		var year=date.getFullYear();  
+		// $('#todayDate').html(day +"/"+month+"/"+year)
+		// $('#currentYear').html(year)
+		
+		var dot = day +"/"+month+"/"+year;
+		
+		//alert('today date is ' +  dot)
 		
 		//alert('buttonclicked')
 		
@@ -135,7 +156,7 @@ $(document).ready(function() {
 		var tv_rec = $('#tv_rec').val()
 		
 		const data = {
-			dot : '06/06/2020',
+			dot : dot,
 			mandal : mandal,
 			school :school,
 			funds_estimated: funds_estimated,
@@ -205,7 +226,7 @@ $(document).ready(function() {
 				data: JSON.stringify({ data : data }),
 				success: function(response) {
 					
-					$('#message').append ('Record Successfully Inserted')
+					$('#message').append (`<p class="bg-success text-white p-2 text-center">Record Successfully Inserted</p>`)
 					$('#mandal').val('')
 					$('#school').val('')
 					$('#funds_estimated').val('')
@@ -264,7 +285,7 @@ $(document).ready(function() {
 					$('#tv_upload').val('')
 					$('#tv_rec').val('')
 					
-					// $('#naduneduForm').reset()
+					//$('#naduneduForm').reset()
 					console.log('successfully inserted')
 					
 

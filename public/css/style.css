@@ -146,6 +146,7 @@ tbody tr td input[type="Number"] {
   /* background: #5bc0de; */
   color: white;
   padding: 10px;
+  margin-bottom: 25px;
 }
 
 .bankHeading:after {
@@ -166,6 +167,10 @@ tbody tr td input[type="Number"] {
 #btnSubmit {
   width: 25%;
   margin: 0 auto;
+}
+
+label {
+	color: blue
 }
 
 
