@@ -51,6 +51,39 @@ $(document).ready(function() {
 		
 	})
 	
+	$('#school').on('change', function() {
+		var school = $('#school').val()
+		// $('#school').html(`<option>Select School</option>`)
+		console.log(mandal)
+		
+		$.ajax({
+			url: '/loadtagged',
+			method: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify({ school: school }),
+			success: function(response) {
+				$('#tagged').html('')
+				var taggedassist = response.taggedassist[0].taggedassist
+				
+				$('#tagged').append(`<p class="text-danger">Tagged Assistant : ${taggedassist}</p>`)
+				// var sch = $('#school');
+				// console.log(response.schools)
+				// sch.html('')
+				// sch.html(`<option>Select School</option>`)
+				// response.schools.forEach(function(school) {
+					
+				// 	sch.append(
+				// 		'<option value="' + school.schoolname + '">' + school.schoolname + '</option>'
+				// 	);
+				// });
+			}
+		});
+		
+	})
+	
+	
+	
+	
 		
 	$('#naduneduForm').on('submit', function(e) {
 		

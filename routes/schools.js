@@ -36,11 +36,31 @@ app.post('/loadschools', function(req,res){
 	//var sql = `SELECT rank from teachers WHERE opted_mandal = '' ORDER BY rank`;
 	db.query(sql, function(err, schools){
 		if(err){
-			req.flash('error', err.message)
+			//req.flash('error', err.message)
 			res.redirect('/errorpage')
 		} else {
 			//console.log(schools)
 			res.send({schools : schools})
+		}
+		
+	})
+})
+
+app.post('/loadtagged', function(req,res){
+	
+	var school = req.body.school
+	
+	var sql = `SELECT taggedassist from nadunedu where schoolname='${school}'`
+	
+	//var sql = `SELECT rank from teachers WHERE opted_mandal = '' ORDER BY rank`;
+	db.query(sql, function(err, taggedassist){
+		if(err){
+			//req.flash('error', err.message)
+			console.log('error occured')
+			//res.redirect('/errorpage')
+		} else {
+			//console.log(schools)
+			res.send({taggedassist : taggedassist})
 		}
 		
 	})
