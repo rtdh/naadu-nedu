@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <title>Enrolement</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+	  
+ <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	 
+
+
+   
+  </head>
+
+  <body>
+
+	<div class="container-fluid mt-2" style="padding: 0% 5%">
+		<h6 class="bg-info text-center text-white p-2">Nadu Nedu Details</h6>
+		<div id="message">
+			
+		</div>
+		<form id="naduneduForm">
+			
+		
+		<div class="row">
+			<div class="col-lg-6 col-md-6">
+			    <div class="form-group">
+					<label>Mandal</label>
+					<select id="mandal" name="mandal" class="form-control" required>
+						<option value="">Select Mandal</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6">
+			    <div class="form-group">
+					<label>School</label>
+					<select id="school" name="mandal" class="form-control" required>
+						<!-- <option value="">Select School</option> -->
+					</select>
+				</div>
+			</div>
+		</div>
+		 
+		 <!-- Funds  -->
+		<h6 class="bg-info text-center text-white p-2">Funds in Lakhs</h6>
+		<div class="row">
+			<div class="col-lg-3 col-md-3">
+			    <div class="form-group">
+					<label>Estimated</label>
+					<input type="Number" id="funds_estimated" name="funds_estimated" class="form-control" placeholder="Number Only" required>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3">
+			    <div class="form-group">
+					<label>Funds Received</label>
+					<input type="Number" id="funds_receivedOne" name="funds_receivedOne" class="form-control" placeholder="Number Only" required>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3">
+			    <div class="form-group">
+					<label>Funds Received</label>
+					<input type="Number" id="funds_receivedTwo" name="funds_receivedTwo" class="form-control" placeholder="Number Only" required>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3">
+			    <div class="form-group">
+					<label>Funds Expenditure</label>
+					<input type="Number" id="funds_expenditure" name="funds_expenditure" class="form-control" placeholder="Number Only" required>
+				</div>
+			</div>
+		</div>
+		 <!-- Components Cement, sand etc-->
+		 
+		 <div class="row">
+			
+			<div class="col-lg-2">
+				 <p class="text-center bankHeading">Cement Details (in Bags)</p>
+				 <table>
+					<tbody>
+						<tr>
+							<td class="heading">Company</td>
+							<td><select id="cement_company" name="cement_company" class="form-control" required>
+									<option value="PARASAKTI">PARASAKTI</option>
+									<option value="KCP">KCP</option>
+									<option value="MAHA CEMENT">MAHA CEMENT</option>
+									<option value="BHAVYA">BHAVYA</option>
+									<option value="ULTRA TECH">ULTRA TECH</option>
+									<option value="PENNA">PENNA</option>
+									<option value="INDIA CEMENT">INDIA CEMENT</option>
+									<option value="JUARI">JURIA</option>
+
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="heading">Cement Required</td>
+							<td><input type="text" id="cement_req" name="cement_req" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Indent Placed</td>
+							<td><input type="text" id="cement_indent_placed" name="cement_indent_placed" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Received</td>
+							<td><input type="text" id="cement_rec" name="cement_rec" required></td>
+						</tr>
+
+					</tbody>
+                </table>
+			</div>
+			 <div class="col-lg-2">
+				 <p class="text-center bankHeading">Sand (In Metric Tones)</p>
+				 <table>
+					<tbody>
+						
+						<tr>
+							<td class="heading">Required</td>
+							<td><input type="text" id="sand_req" name="sand_req" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Upload</td>
+							<td><input type="text" id="sand_indent_placed" name="sand_upload" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Received</td>
+							<td><input type="text" id="sand_rec" name="sand_rec" required></td>
+						</tr>
+
+					</tbody>
+                </table>
+			</div>
+			 <div class="col-lg-2">
+				 <p class="text-center bankHeading">Metals (In Units)</p>
+				 <table>
+					<tbody>
+						
+						<tr>
+							<td class="heading">Required</td>
+							<td><input type="text" id="metal_req" name="metal_req" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Received</td>
+							<td><input type="text" id="metal_rec" name="metal_rec" required></td>
+						</tr>
+
+					</tbody>
+                </table>
+			</div>
+			 <div class="col-lg-2">
+				 <p class="text-center bankHeading">Steel (In Metric Tones)</p>
+				 <table>
+					<tbody>
+						
+						<tr>
+							<td class="heading">Indent Placed</td>
+							<td><input type="text" id="steel_req" name="steel_req" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Received</td>
+							<td><input type="text" id="steel_rec" naid="steel_req" me="steel_rec" required></td>
+						</tr>
+
+					</tbody>
+                </table>
+			</div>
+			 <div class="col-lg-4">
+				 <p class="text-center bankHeading">Cement Details</p>
+				 <table>
+					<tbody>
+						
+						<tr>
+							<td class="heading">Cement Bricks Required</td>
+							<td><input type="text" id="cement_bricks_req" name="cement_bricks_req" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Cement Bricks Received</td>
+							<td><input type="text" id="cement_bricks_rec" name="cement_bricks_rec" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Cley Bricks Required</td>
+							<td><input type="text" id="cley_bricks_req" name="cley_bricks_req" required></td>
+						</tr>
+						<tr>
+							<td class="heading">Cley Bricks Received</td>
+							<td><input type="text" id="cley_bricks_rec" name="cley_bricks_rec" required></td>
+						</tr>
+
+					</tbody>
+                </table>
+			</div>
+		 </div>
+		
+	  
+	  <h6 class="bg-info text-center text-white p-2">Centralised Procurements</h6>
+	  
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Wash Basins</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="wb_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="wb_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="wb_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Urinals</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="urinals_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="urinals_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="urinals_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">WEsten commodes</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="wc_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="wc_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="wc_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Fans</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="fans_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="fans_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="fans_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Duel Bencahes Classes 1-3</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="db_class_1_3_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="db_class_1_3_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="db_class_1_3_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Duel Bencahes Classes 4-7</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="db_class_4_7_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="db_class_4_7_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="db_class_4_7_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Duel Bencahes Classes 7-10</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="db_class_7_10_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the Apid="db_class_7_10_req" p</label>
+					<select name="wb_upload" id="db_class_7_10_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="db_class_7_10_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Techer Tables</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="tables_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="tables_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="tables_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Teacher Chairs</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="chairs_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="chairs_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="chairs_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Almirah</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="almirah_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="almirah_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="almirah_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Chalk Boards</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="chalk_board_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="chalk_board_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="chalk_board_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>	
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label class="btn btn-success">Smart TV</label>
+					
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label >Requirement</label>
+					<input type="Number" id="tv_req" name="wb_req" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Uploaded in the App</label>
+					<select name="wb_upload" id="tv_upload" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="form-group">
+					<label>Received</label>
+					<select name="wb_rec" id="tv_rec" class="form-control" required>
+						<option value="">Select</option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center self-items-center align-items-center" style="border: 1px solid lightgrey; padding: 5px">
+			<div class="col-lg-12">
+				
+				<div class="form-group">
+					
+					<input type="submit" id="naduneduBtn" class="btn btn-success btn-block" value="Submit">
+				</div>
+			</div>
+		</div>
+	</form>	
+	
+	</div>
+		
+	  
+
+	  <!-- JS, Popper.js, and jQuery -->
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="js/ajax.js"></script>
+	  
+	  <!-- <script>
+	  
+	  	function submit() {
+  			/*Put all the data posting code here*/
+ 			document.getElementById("myForm").reset();
+		}
+	  
+	  </script> -->
+	</body>
+</html>
