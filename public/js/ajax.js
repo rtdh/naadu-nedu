@@ -56,7 +56,7 @@ $(document).ready(function() {
 		
 		e.preventDefault()
 		
-		alert('buttonclicked')
+		//alert('buttonclicked')
 		
 		var mandal = $('#mandal').val()
 		var school = $('#school').val()
