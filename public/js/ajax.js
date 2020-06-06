@@ -289,6 +289,10 @@ $(document).ready(function() {
 					console.log('successfully inserted')
 					
 
+				},
+				complete:function(){
+				   $('body, html').animate({scrollTop:$('#naduneduForm').offset().top + '100px'}, 'slow');
+				   // $('#naduneduForm').on('submit')
 				}
 						
 			})
