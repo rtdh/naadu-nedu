@@ -179,4 +179,11 @@ label {
 	color: blue
 }
 
+#tagged {
+	display: none;
+	border: none;
+	color: red;
+	
+}
+
 

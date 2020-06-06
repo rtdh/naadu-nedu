@@ -65,17 +65,9 @@ $(document).ready(function() {
 				$('#tagged').html('')
 				var taggedassist = response.taggedassist[0].taggedassist
 				
-				$('#tagged').append(`<p class="text-danger">Tagged Assistant : ${taggedassist}</p>`)
-				// var sch = $('#school');
-				// console.log(response.schools)
-				// sch.html('')
-				// sch.html(`<option>Select School</option>`)
-				// response.schools.forEach(function(school) {
-					
-				// 	sch.append(
-				// 		'<option value="' + school.schoolname + '">' + school.schoolname + '</option>'
-				// 	);
-				// });
+				$('#tagged').val(taggedassist)
+				$('#tagged').css('display', 'block')
+				
 			}
 		});
 		
@@ -188,6 +180,8 @@ $(document).ready(function() {
 		var tv_upload = $('#tv_upload').val()
 		var tv_rec = $('#tv_rec').val()
 		
+		var tagged = $('#tagged').val()
+		
 		const data = {
 			dot : dot,
 			mandal : mandal,
@@ -244,7 +238,8 @@ $(document).ready(function() {
 			chalk_board_rec:chalk_board_rec,
 			tv_req:tv_req,
 			tv_upload:tv_upload,
-			tv_rec:tv_rec
+			tv_rec:tv_rec,
+			tagged : tagged
 		}
 		console.log(data)
 		console.log(mandal)
@@ -317,6 +312,7 @@ $(document).ready(function() {
 					$('#tv_req').val('')
 					$('#tv_upload').val('')
 					$('#tv_rec').val('')
+					$('#tagged').val('')
 					
 					//$('#naduneduForm').reset()
 					console.log('successfully inserted')
