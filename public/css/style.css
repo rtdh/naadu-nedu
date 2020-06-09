@@ -5,9 +5,11 @@ html {
 body {
 	background: url('https://images.unsplash.com/photo-1515549832467-8783363e19b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
 	
-		
 }
 
+.navbarDiv {
+	padding : 0;
+}
 
 .enrolmentTable tbody tr, .enrolmentTable thead tr {
 	height: 20px;
@@ -184,6 +186,15 @@ label {
 	border: none;
 	color: red;
 	
+}
+
+table#example thead th {
+	vertical-align: middle;
+}
+
+.table-bordered thead td, .table-bordered thead th {
+	font-size : 14px;
+	vertical-align: middle;
 }
 
 

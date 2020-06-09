@@ -6,19 +6,24 @@
 		</div>
 	</div>
 <% } else { %>
-<h6 class="text-center display-4 mt-2" style="font-size: 1.5rem; color: red">Nadu-Nedu Entry Report</h6>
-				<div style="float:right">
-					Date: <span id ="todayDate"></span>
-				</div>
+<h6 class="text-center display-4 mt-2" style="font-size: 1.5rem; color: blue">Nadu-Nedu Entry Report</h6>
+				
 <!-- <div class="container-fluid d-flex justify-content-center mt-3" style="overflow: scroll"> -->
-<div id="wrapper" class="container-fluid" style="overflow: scroll; padding: 2% 5%">
+<div id="wrapper" style="overflow: scroll; padding: 2% 5%">
+	<!-- <div style="float:right">
+		Date: <span id ="txt"></span>
+	</div> -->
+	
+	<div class="container-fluid" style="width: 100%">
+		
+		
 			<div class="row">
 			<!-- <div id="" style="overflow: scrollX"> -->
 				
 			
 			<table id="example" class="table table-bordered table-striped">
 				
-				<thead style="background: rgb(41,43,44); color: white">
+				<thead style="background: rgb(41,43,44); color: white;font-size: 10px;font-weight:normal">
 					<tr>
 						<th rowspan="2">SlNo</th>
 						<th rowspan="2">Date of Entry</th>
@@ -38,6 +43,12 @@
 						<th colspan="3">Duel Desks (1-3)</th>
 						<th colspan="3">Duel Desks (4-7)</th>
 						<th colspan="3">Duel Desks (8-10)</th>
+						<th colspan="3">Teachers' Tables</th>
+						<th colspan="3">Teachers' Chairs</th>
+						<th colspan="3">Almirah</th>
+						<th colspan="3">Green Chalk Board</th>
+						<th colspan="3">English Lab</th>
+						<th rowspan="2">Tagged Asst.</th>
 						
 					</tr>
 					<tr>
@@ -83,62 +94,93 @@
 						<th>Required</th>
 						<th>Upload</th>
 						<th>Received</th>
+						<th>Required</th>
+						<th>Upload</th>
+						<th>Received</th>
+						<th>Required</th>
+						<th>Upload</th>
+						<th>Received</th>
+						<th>Required</th>
+						<th>Upload</th>
+						<th>Received</th>
+						<th>Required</th>
+						<th>Upload</th>
+						<th>Received</th>
+						<th>Required</th>
+						<th>Upload</th>
+						<th>Received</th>
 					</tr>
 				</thead>
 				<tbody>
 							<% results.forEach(function(result, i) { %>
 							<tr>
-								<td style="text-align: center; width: 2%"><%= i + 1 %></td>
-								<td style="width: 2%"><%= result.date_entry %></td>
-								<td style="width: 10%"><%= result.mandal %></td>
-								<td style="width: 15 %"> <%= result.school %></td>
-								<td style="width: 8%"><%= result.funds_estimated %></td>
-								<td style="width: 10%"><%= result.funds_receivedone %></td>
-								<td style="width: 10%"><%= result.funds_receivedtwo %></td>
-								<td style="width: 8%"><%= result.funds_expenditure %></td>
-								<td style="width: 11%"><%= result.cement_company %></td>
-								<td style="width: 11%"><%= result.cement_required %></td>
-								<td style="width: 25%"><%= result.cement_indent_placed %></td>
-								<td style="width: 11%"><%= result.cement_received %></td>
-								<td style="width: 11%"><%= result.sand_required %></td>
-								<td style="width: 25%"><%= result.sand_indent_placed %></td>
-								<td style="width: 11%"><%= result.sand_received %></td>
-								<td style="width: 11%"><%= result.metal_required %></td>
-								<td style="width: 11%"><%= result.metal_received %></td>
-								<td style="width: 11%"><%= result.steel_required %></td>
-								<td style="width: 11%"><%= result.steel_received %></td>
-								<td style="width: 11%"><%= result.cement_bricks_required %></td>
-								<td style="width: 11%"><%= result.cement_bricks_received %></td>
-								<td style="width: 11%"><%= result.cley_bricks_required %></td>
-								<td style="width: 11%"><%= result.cley_bricks_received %></td>
-								<td style="width: 11%"><%= result.wb_required %></td>
-								<td style="width: 11%"><%= result.wb_upload %></td>
-								<td style="width: 11%"><%= result.wb_received %></td>
-								<td style="width: 11%"><%= result.urinals_required %></td>
-								<td style="width: 11%"><%= result.urinals_upload %></td>
-								<td style="width: 11%"><%= result.urinals_received %></td>
-								<td style="width: 11%"><%= result.wc_required %></td>
-								<td style="width: 11%"><%= result.wc_upload %></td>
-								<td style="width: 11%"><%= result.wc_received %></td>
-								<td style="width: 11%"><%= result.fans_required %></td>
-								<td style="width: 11%"><%= result.fans_upload %></td>
-								<td style="width: 11%"><%= result.fans_received %></td>
-								<td style="width: 11%"><%= result.db_class_1_3_required %></td>
-								<td style="width: 11%"><%= result.db_class_1_3_upload %></td>
-								<td style="width: 11%"><%= result.db_class_1_3_received %></td>
-								<td style="width: 11%"><%= result.db_class_4_7_required %></td>
-								<td style="width: 11%"><%= result.db_class_4_7_upload %></td>
-								<td style="width: 11%"><%= result.db_class_4_7_received %></td>
-								<td style="width: 11%"><%= result.db_class_7_10_required %></td>
-								<td style="width: 11%"><%= result.db_class_7_10_upload %></td>
-								<td style="width: 11%"><%= result.db_class_7_10_received %></td>
+								<td><%= i + 1 %></td>
+								<td><%= result.date_entry %></td>
+								<td><%= result.mandal %></td>
+								<td><%= result.school %></td>
+								<td><%= result.funds_estimated %></td>
+								<td><%= result.funds_receivedone %></td>
+								<td><%= result.funds_receivedtwo %></td>
+								<td><%= result.funds_expenditure %></td>
+								<td><%= result.cement_company %></td>
+								<td><%= result.cement_required %></td>
+								<td><%= result.cement_indent_placed %></td>
+								<td><%= result.cement_received %></td>
+								<td><%= result.sand_required %></td>
+								<td><%= result.sand_indent_placed %></td>
+								<td><%= result.sand_received %></td>
+								<td><%= result.metal_required %></td>
+								<td><%= result.metal_received %></td>
+								<td><%= result.steel_required %></td>
+								<td><%= result.steel_received %></td>
+								<td><%= result.cement_bricks_required %></td>
+								<td><%= result.cement_bricks_received %></td>
+								<td><%= result.cley_bricks_required %></td>
+								<td><%= result.cley_bricks_received %></td>
+								<td><%= result.wb_required %></td>
+								<td><%= result.wb_upload %></td>
+								<td><%= result.wb_received %></td>
+								<td><%= result.urinals_required %></td>
+								<td><%= result.urinals_upload %></td>
+								<td><%= result.urinals_received %></td>
+								<td><%= result.wc_required %></td>
+								<td><%= result.wc_upload %></td>
+								<td><%= result.wc_received %></td>
+								<td><%= result.fans_required %></td>
+								<td><%= result.fans_upload %></td>
+								<td><%= result.fans_received %></td>
+								<td><%= result.db_class_1_3_required %></td>
+								<td><%= result.db_class_1_3_upload %></td>
+								<td><%= result.db_class_1_3_received %></td>
+								<td><%= result.db_class_4_7_required %></td>
+								<td><%= result.db_class_4_7_upload %></td>
+								<td><%= result.db_class_4_7_received %></td>
+								<td><%= result.db_class_7_10_required %></td>
+								<td><%= result.db_class_7_10_upload %></td>
+								<td><%= result.db_class_7_10_received %></td>
+								<td><%= result.tables_required %></td>
+								<td><%= result.tables_upload %></td>
+								<td><%= result.tables_received %></td>
+								<td><%= result.chairs_required %></td>
+								<td><%= result.chairs_upload %></td>
+								<td><%= result.chairs_received %></td>
+								<td><%= result.almirah_required %></td>
+								<td><%= result.almirah_upload %></td>
+								<td><%= result.almirah_received %></td>
+								<td><%= result.chalk_board_required %></td>
+								<td><%= result.chalk_board_upload %></td>
+								<td><%= result.chalk_board_received %></td>
+								<td><%= result.tv_required %></td>
+								<td><%= result.tv_upload %></td>
+								<td><%= result.tv_received %></td>
+								<td><%= result.taggedassist %></td>
 								
 							</tr>
 					<% }); %>
 				</tbody>
 			</table>
 			</div>	
-		<!-- </div> -->
+		</div>
 </div>
 <% } %>;
 

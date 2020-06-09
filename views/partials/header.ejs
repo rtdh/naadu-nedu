@@ -9,6 +9,8 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 	  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+  	  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
 
     <title>Nadu-Nedu WG</title>
 
@@ -19,8 +21,58 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	 
 
-
-   
+ 
   </head>
 
   <body>
+	  
+	  	  <div class="container-fluid" style="padding: 0">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+					  <a class="navbar-brand" href="#">Nadu-Nedu WG</a>
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					  </button>
+
+					  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+						  <li class="nav-item active">
+							<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="/">Entry</a>
+						  </li>
+							<li class="nav-item">
+							<a class="nav-link" href="/report">Report</a>
+						  </li>
+						  				  
+						</ul>
+                        <ul class="navbar-nav ml-auto">		
+							<li class="nav-item">
+								<p class="text-white" id="txt"></p>
+						  </li>
+						</ul>						
+					  </div>
+					</nav>
+</div>
+	  
+	  <script>  
+window.onload=function(){getTime()}  
+function getTime(){  
+var today=new Date();  
+var h=today.getHours();  
+var m=today.getMinutes();  
+var s=today.getSeconds();  
+// add a zero in front of numbers<10  
+m=checkTime(m);  
+s=checkTime(s);  
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;  
+setTimeout(function(){getTime()},1000);  
+}  
+//setInterval("getTime()",1000);//another way  
+function checkTime(i){  
+if (i<10){  
+  i="0" + i;  
+ }  
+return i;  
+}  
+</script> 
