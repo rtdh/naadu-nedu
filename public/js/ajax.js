@@ -132,7 +132,7 @@ $(document).ready(function() {
 		var cley_bricks_req = $('#cley_bricks_req').val()
 		var cley_bricks_rec = $('#cley_bricks_rec').val()
 		
-		var wb_rec = $('#wb_rec').val()
+		var wb_req = $('#wb_req').val()
 		var wb_upload = $('#wb_upload').val()
 		var wb_rec = $('#wb_rec').val()
 		
@@ -172,7 +172,7 @@ $(document).ready(function() {
 		var almirah_upload = $('#almirah_upload').val()
 		var almirah_rec = $('#almirah_rec').val()
 		
-		var chalk_board_req = $('#chalk_board_upload').val()
+		var chalk_board_req = $('#chalk_board_req').val()
 		var chalk_board_upload = $('#chalk_board_upload').val()
 		var chalk_board_rec = $('#chalk_board_rec').val()
 		
@@ -191,54 +191,56 @@ $(document).ready(function() {
 			funds_receivedTwo:funds_receivedTwo,
 			funds_expenditure:funds_expenditure,
 			cement_company:cement_company,
-			cement_req: cement_req,
+			cement_required: cement_req,
 			cement_indent_placed: cement_indent_placed,
-			cement_rec:cement_rec,
-			sand_req: sand_req,
+			cement_received:cement_rec,
+			sand_required: sand_req,
 			sand_indent_placed: sand_indent_placed,
-			sand_rec: sand_rec,
-			metal_req: metal_req,
-			metal_rec: metal_rec,
-			cement_bricks_req: cement_bricks_req,
-			cement_bricks_rec:cement_bricks_rec,
-			cley_bricks_req: cley_bricks_req,
-			cley_bricks_rec: cley_bricks_rec,
-			wb_rec: wb_rec,
+			sand_received: sand_rec,
+			metal_required: metal_req,
+			metal_received: metal_rec,
+			steel_required: steel_req,
+			steel_received: steel_rec,
+			cement_bricks_required: cement_bricks_req,
+			cement_bricks_received:cement_bricks_rec,
+			cley_bricks_required: cley_bricks_req,
+			cley_bricks_received: cley_bricks_rec,
+			wb_required: wb_req,
 			wb_upload: wb_upload,
-			wb_rec: wb_rec,
-			urinals_req:urinals_req,
+			wb_received: wb_rec,
+			urinals_required:urinals_req,
 			urinals_upload: urinals_upload,
-			urinals_rec: urinals_rec,
-			wc_req:wc_req,
+			urinals_received: urinals_rec,
+			wc_required:wc_req,
 			wc_upload:wc_upload,
-			wc_rec:wc_rec,
-			fans_req:fans_req,
+			wc_received:wc_rec,
+			fans_required:fans_req,
 			fans_upload:fans_upload,
-			fans_rec:fans_rec,
-			db_class_1_3_req:db_class_1_3_req,
+			fans_received:fans_rec,
+			db_class_1_3_required:db_class_1_3_req,
 			db_class_1_3_upload:db_class_1_3_upload,
-			db_class_1_3_rec:db_class_1_3_rec,
-			db_class_4_7_req:db_class_4_7_req,
+			db_class_1_3_received:db_class_1_3_rec,
+			db_class_4_7_required:db_class_4_7_req,
 			db_class_4_7_upload:db_class_4_7_upload,
-			db_class_4_7_rec:db_class_4_7_rec,
-			db_class_7_10_req:db_class_7_10_req,
+			db_class_4_7_received:db_class_4_7_rec,
+			db_class_7_10_required:db_class_7_10_req,
 			db_class_7_10_upload:db_class_7_10_upload,
-			db_class_7_10_rec: db_class_7_10_rec,
-			tables_req:tables_req,
+			db_class_7_10_received: db_class_7_10_rec,
+			tables_required:tables_req,
 			tables_upload:tables_upload,
-			tables_rec:tables_rec,
-			chairs_req:chairs_req,
+			tables_received:tables_rec,
+			chairs_required:chairs_req,
 			chairs_upload:chairs_upload,
-			chairs_rec:chairs_rec,
-			almirah_req: almirah_req,
+			chairs_received:chairs_rec,
+			almirah_required: almirah_req,
 			almirah_upload: almirah_upload,
-			almirah_rec:almirah_rec,
-			chalk_board_req:chalk_board_req,
+			almirah_received:almirah_rec,
+			chalk_board_required:chalk_board_req,
 			chalk_board_upload:chalk_board_upload,
-			chalk_board_rec:chalk_board_rec,
-			tv_req:tv_req,
+			chalk_board_received:chalk_board_rec,
+			tv_required:tv_req,
 			tv_upload:tv_upload,
-			tv_rec:tv_rec,
+			tv_received:tv_rec,
 			tagged : tagged
 		}
 		console.log(data)
@@ -253,6 +255,8 @@ $(document).ready(function() {
 				contentType: 'application/json',
 				data: JSON.stringify({ data : data }),
 				success: function(response) {
+					
+					console.log(response)
 					
 					$('#message').append (`<p class="bg-success text-white p-2 text-center">Record Successfully Inserted</p>`)
 					$('#mandal').val('')
@@ -276,7 +280,7 @@ $(document).ready(function() {
 					$('#cement_bricks_rec').val('')
 					$('#cley_bricks_req').val('')
 					$('#cley_bricks_rec').val('')
-					$('#wb_rec').val('')
+					$('#wb_req').val('')
 					$('#wb_upload').val('')
 					$('#wb_rec').val('')
 					$('#urinals_req').val('')

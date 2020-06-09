@@ -1,29 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-	  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <title>Enrolement</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
-	  
- <link rel="stylesheet" href="css/style.css">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	 
-
-
-   
-  </head>
-
-  <body>
+<%- include('partials/header') %>
 	  <div class="container">
 		  <div class="row">
 			  <img src="/images/header.png" alt="Naadu Nedu" style="width: 100%">
@@ -49,7 +24,7 @@
 			<div class="col-lg-6 col-md-6">
 			    <div class="form-group">
 					<label>School</label>
-					<select id="school" name="mandal" class="form-control" required>
+					<select id="school" name="school" class="form-control" required>
 						<option value="">Select School</option>
 					</select>
 					<div class="d-flex">
@@ -299,7 +274,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Uploaded in the App</label>
-					<select name="wb_upload" id="wc_upload" class="form-control" required>
+					<select name="wc_upload" id="wc_upload" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -309,7 +284,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="wc_rec" class="form-control" required>
+					<select name="wc_rec" id="wc_rec" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -333,7 +308,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Uploaded in the App</label>
-					<select name="wb_upload" id="fans_upload" class="form-control" required>
+					<select name="fans_upload" id="fans_upload" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -343,7 +318,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="fans_rec" class="form-control" required>
+					<select name="fans_rec" id="fans_rec" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -635,22 +610,6 @@
 	</form>	
 	
 	</div>
-		
+<%- include('partials/footer') %>		
 	  
 
-	  <!-- JS, Popper.js, and jQuery -->
-
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-	  <script type="text/javascript" src="js/ajax.js"></script>
-	  
-	  <!-- <script>
-	  
-	  	function submit() {
-  			/*Put all the data posting code here*/
- 			document.getElementById("myForm").reset();
-		}
-	  
-	  </script> -->
-	</body>
-</html>
