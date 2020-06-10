@@ -30,7 +30,7 @@
 					</select>
 					<div class="d-flex">
 						<small class="d-inline text-danger">Tagged Engineering Asst. : </small>
-						<input type="text" id="tagged" disabled style="width: 400px; margin-left: 50px">
+						<input type="text" id="tagged" value="ramesh" disabled style="width: 400px; margin-left: 50px">
 					</div>	
 				</div>
 			</div>
@@ -42,25 +42,25 @@
 			<div class="col-lg-3 col-md-3">
 			    <div class="form-group">
 					<label>Estimated</label>
-					<input type="Number" id="funds_estimated" name="funds_estimated" class="form-control" placeholder="Number Only" required>
+					<input type="Number" min="0" id="funds_estimated" name="funds_estimated" class="form-control" placeholder="Number Only" required>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-3">
 			    <div class="form-group">
 					<label>Received 7.5% revolving fund</label>
-					<input type="Number" id="funds_receivedOne" name="funds_receivedOne" class="form-control" placeholder="Number Only" required>
+					<input type="Number" min="0" id="funds_receivedone" name="funds_receivedOne" class="form-control" placeholder="Number Only">
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-3">
 			    <div class="form-group">
 					<label>Received 15% revolving fund</label>
-					<input type="Number" id="funds_receivedTwo" name="funds_receivedTwo" class="form-control" placeholder="Number Only" required>
+					<input type="Number" min="0" id="funds_receivedtwo" name="funds_receivedTwo" class="form-control" placeholder="Number Only">
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-3">
 			    <div class="form-group">
 					<label>Funds Expenditure</label>
-					<input type="Number" id="funds_expenditure" name="funds_expenditure" class="form-control" placeholder="Number Only" required>
+					<input type="Number" min="0" id="funds_expenditure" name="funds_expenditure" class="form-control" placeholder="Number Only" required>
 				</div>
 			</div>
 		</div>
@@ -75,6 +75,7 @@
 						<tr>
 							<td class="heading">Cement Company</td>
 							<td><select id="cement_company" name="cement_company" class="form-control" required>
+									<option value="">Select</option>
 									<option value="PARASAKTI">PARASAKTI</option>
 									<option value="KCP">KCP</option>
 									<option value="MAHA CEMENT">MAHA CEMENT</option>
@@ -89,15 +90,15 @@
 						</tr>
 						<tr>
 							<td class="heading">Cement Required</td>
-							<td><input type="Number" id="cement_req" name="cement_req" placeholder="No.of Bags" required></td>
+							<td><input type="Number" min="0" id="cement_required" name="cement_req" placeholder="No.of Bags" required></td>
 						</tr>
 						<tr>
 							<td class="heading">Cement Indent Placed</td>
-							<td><input type="Number" id="cement_indent_placed" name="cement_indent_placed" placeholder="No.of Bags" required></td>
+							<td><input type="Number" min="0" id="cement_indent_placed" name="cement_indent_placed" placeholder="No.of Bags" required></td>
 						</tr>
 						<tr>
 							<td class="heading">Cement Received</td>
-							<td><input type="Number" id="cement_rec" name="cement_rec" placeholder="No.of Bags" required></td>
+							<td><input type="Number" min="0" id="cement_received" name="cement_rec" placeholder="No.of Bags" required></td>
 						</tr>
 
 					</tbody>
@@ -110,15 +111,15 @@
 						
 						<tr>
 							<td class="heading">Sand Required</td>
-							<td><input type="Number" id="sand_req" name="sand_req" placeholder="in MTs" required></td>
+							<td><input type="Number" min="0" id="sand_required" name="sand_req" placeholder="in MTs" required></td>
 						</tr>
 						<tr>
 							<td class="heading">Sand Indent Placed</td>
-							<td><input type="Number" id="sand_indent_placed" name="sand_upload" placeholder="in MTs" required></td>
+							<td><input type="Number" min="0" id="sand_indent_placed" name="sand_upload" placeholder="in MTs" required></td>
 						</tr>
 						<tr>
 							<td class="heading">Sand Received</td>
-							<td><input type="Number" id="sand_rec" name="sand_rec" placeholder="in MTs" required></td>
+							<td><input type="Number" min="0" id="sand_received" name="sand_rec" placeholder="in MTs" required></td>
 						</tr>
 
 					</tbody>
@@ -131,11 +132,11 @@
 						
 						<tr>
 							<td class="heading">Metal Required</td>
-							<td><input type="Number" id="metal_req" name="metal_req" placeholder="In Units" required></td>
+							<td><input type="Number" min="0" id="metal_required" name="metal_req" placeholder="In Units" required></td>
 						</tr>
 						<tr>
 							<td class="heading">Metal Received</td>
-							<td><input type="Number" id="metal_rec" name="metal_rec" placeholder="In Units" required></td>
+							<td><input type="Number" min="0" id="metal_received" name="metal_rec" placeholder="In Units" required></td>
 						</tr>
 
 					</tbody>
@@ -148,11 +149,11 @@
 						
 						<tr>
 							<td class="heading">Steel Required</td>
-							<td><input type="Number" id="steel_req" name="steel_req" placeholder="Metric Tones" required></td>
+							<td><input type="Number" min="0" id="steel_required" name="steel_req" placeholder="Metric Tones" required></td>
 						</tr>
 						<tr>
 							<td class="heading">Steel Received</td>
-							<td><input type="Number" id="steel_rec" naid="steel_req" placeholder="Metric Tones" me="steel_rec" required></td>
+							<td><input type="Number" min="0" id="steel_received" naid="steel_req" placeholder="Metric Tones" me="steel_rec" required></td>
 						</tr>
 
 					</tbody>
@@ -165,19 +166,19 @@
 						
 						<tr>
 							<td class="heading">Cement Bricks Required</td>
-							<td><input type="Number" id="cement_bricks_req" name="cement_bricks_req" placeholder="If required, give value"></td>
+							<td><input type="Number" min="0" id="cement_bricks_required" name="cement_bricks_req" placeholder="If required, give value"></td>
 						</tr>
 						<tr>
 							<td class="heading">Cement Bricks Received</td>
-							<td><input type="Number" id="cement_bricks_rec" name="cement_bricks_rec" placeholder="Give value"></td>
+							<td><input type="Number" min="0" id="cement_bricks_received" name="cement_bricks_rec" placeholder="Give value"></td>
 						</tr>
 						<tr>
 							<td class="heading">Country Bricks Required</td>
-							<td><input type="Number" id="cley_bricks_req" name="cley_bricks_req" placeholder="If required, give value"></td>
+							<td><input type="Number" min="0" id="country_bricks_required" name="cley_bricks_req" placeholder="If required, give value"></td>
 						</tr>
 						<tr>
 							<td class="heading">Country Bricks Received</td>
-							<td><input type="Number" id="cley_bricks_rec" name="cley_bricks_rec" placeholder="Give value"></td>
+							<td><input type="Number" min="0" id="country_bricks_received" name="cley_bricks_rec" placeholder="Give value"></td>
 						</tr>
 
 					</tbody>
@@ -201,7 +202,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="wb_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="wb_required" name="wb_required" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -217,7 +218,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="wb_rec" class="form-control" required>
+					<select name="wb_rec" id="wb_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -235,7 +236,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="urinals_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="urinals_required" name="wb_req" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -251,7 +252,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="urinals_rec" class="form-control" required>
+					<select name="wb_rec" id="urinals_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -269,7 +270,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="wc_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="wc_required" name="wb_req" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -285,7 +286,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wc_rec" id="wc_rec" class="form-control" required>
+					<select name="wc_rec" id="wc_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -303,7 +304,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="fans_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="fans_required" name="wb_req" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -319,7 +320,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="fans_rec" id="fans_rec" class="form-control" required>
+					<select name="fans_rec" id="fans_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -337,7 +338,7 @@
 			<div class="col-lg-3">
 				<div class="form-group pb-3">
 					<label >Requirement</label>
-					<input type="Number" id="db_class_1_3_req" name="wb_req" class="form-control" placeholder="Number only">
+					<input type="Number" min="0" id="db_class_1_3_required" name="wb_req" class="form-control" placeholder="Number only">
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -353,7 +354,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="db_class_1_3_rec" class="form-control">
+					<select name="wb_rec" id="db_class_1_3_received" class="form-control">
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -371,7 +372,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="db_class_4_7_req" name="wb_req" class="form-control" placeholder="Number only">
+					<input type="Number" min="0" id="db_class_4_7_required" name="wb_req" class="form-control" placeholder="Number only">
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -387,7 +388,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="db_class_4_7_rec" class="form-control">
+					<select name="wb_rec" id="db_class_4_7_received" class="form-control">
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -405,13 +406,13 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="db_class_7_10_req" name="wb_req" class="form-control" placeholder="Number only">
+					<input type="Number" min="0" id="db_class_8_10_required" name="wb_req" class="form-control" placeholder="Number only">
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Uploaded in the App</label>
-					<select name="wb_upload" id="db_class_7_10_upload" class="form-control">
+					<select name="wb_upload" id="db_class_8_10_upload" class="form-control">
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -421,7 +422,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="db_class_7_10_rec" class="form-control">
+					<select name="wb_rec" id="db_class_8_10_received" class="form-control">
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -439,7 +440,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="tables_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="tables_required" name="wb_req" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -455,7 +456,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="tables_rec" class="form-control" required>
+					<select name="wb_rec" id="tables_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -473,7 +474,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="chairs_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="chairs_required" name="chairs_req" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -489,7 +490,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="chairs_rec" class="form-control" required>
+					<select name="wb_rec" id="chairs_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -507,7 +508,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="almirah_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="almirah_required" name="wb_req" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -523,7 +524,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="almirah_rec" class="form-control" required>
+					<select name="wb_rec" id="almirah_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -541,13 +542,13 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="chalk_board_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="green_chalk_board_required" name="wb_req" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Uploaded in the App</label>
-					<select name="wb_upload" id="chalk_board_upload" class="form-control" required>
+					<select name="wb_upload" id="green_chalk_board_upload" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -557,7 +558,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="chalk_board_rec" class="form-control" required>
+					<select name="wb_rec" id="green_chalk_board_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -575,13 +576,13 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label >Requirement</label>
-					<input type="Number" id="tv_req" name="wb_req" class="form-control" placeholder="Number only" required>
+					<input type="Number" min="0" id="englab_required" name="wb_req" class="form-control" placeholder="Number only" required>
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Uploaded in the App</label>
-					<select name="wb_upload" id="tv_upload" class="form-control" required>
+					<select name="wb_upload" id="englab_upload" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
@@ -591,7 +592,7 @@
 			<div class="col-lg-3">
 				<div class="form-group">
 					<label>Received</label>
-					<select name="wb_rec" id="tv_rec" class="form-control" required>
+					<select name="wb_rec" id="englab_received" class="form-control" required>
 						<option value="">Select</option>
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>

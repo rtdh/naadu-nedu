@@ -1,14 +1,19 @@
 $(document).ready(function() {
 	
 	
-	// $('#mandal').onfocusout(function(){
-	// 	$('#mandal').css('background', 'white')
-	// })
 	
+	// Unfreeze schools
 	
-	// load mandals
+	$.ajax({
+		url: '/unfreezeschools',
+		method: 'GET',
+		contentType: 'application/json',
+		success: function(response) {
+			alert('Schools are unfreezed...')
+		}
+	});
 	
-	//alert('connected')
+	// Load Mandals
 	
 	$.ajax({
 		url: '/loadmandals',
@@ -62,11 +67,89 @@ $(document).ready(function() {
 			contentType: 'application/json',
 			data: JSON.stringify({ school: school }),
 			success: function(response) {
-				$('#tagged').html('')
-				var taggedassist = response.taggedassist[0].taggedassist
 				
-				$('#tagged').val(taggedassist)
+				//console.log(response.results)
+				//$('#tagged').html('')
+				//var taggedassist = response.results[0].taggedassist
+				var tagged = response.results[0].taggedassist
+				
+				$('#tagged').val(tagged)
 				$('#tagged').css('display', 'block')
+				
+				$('#funds_estimated').val(response.results[0].funds_estimated)
+				$('#funds_receivedone').val(response.results[0].funds_receivedone)
+				$('#funds_receivedtwo').val(response.results[0].funds_receivedtwo)
+				$('#funds_expenditure').val(response.results[0].funds_expenditure)
+				
+				$('#cement_company').val(response.results[0].cement_company)
+				$('#cement_required').val(response.results[0].cement_required)
+				$('#cement_indent_placed').val(response.results[0].cement_indent_placed)
+				$('#cement_received').val(response.results[0].cement_received)
+				
+				$('#sand_required').val(response.results[0].sand_required)
+				$('#sand_indent_placed').val(response.results[0].sand_indent_placed)
+				$('#sand_received').val(response.results[0].sand_received)
+				
+				$('#metal_required').val(response.results[0].metal_required)
+				$('#metal_received').val(response.results[0].metal_received)
+				
+				$('#steel_required').val(response.results[0].steel_required)
+				$('#steel_received').val(response.results[0].steel_received)
+				
+				$('#cement_bricks_required').val(response.results[0].cement_bricks_required)
+				$('#cement_bricks_received').val(response.results[0].cement_bricks_received)
+				$('#country_bricks_required').val(response.results[0].country_bricks_required)
+				$('#country_bricks_received').val(response.results[0].country_bricks_received)
+				
+				$('#wb_required').val(response.results[0].wb_required)
+				$('#wb_upload').val(response.results[0].wb_upload)
+				$('#wb_received').val(response.results[0].wb_received)
+				
+				$('#urinals_required').val(response.results[0].urinals_required)
+				$('#urinals_upload').val(response.results[0].urinals_upload)
+				$('#urinals_received').val(response.results[0].urinals_received)
+				
+				$('#wc_required').val(response.results[0].wc_required)
+				$('#wc_upload').val(response.results[0].wc_upload)
+				$('#wc_received').val(response.results[0].wc_received)
+				
+				$('#fans_required').val(response.results[0].fans_required)
+				$('#fans_upload').val(response.results[0].fans_upload)
+				$('#fans_received').val(response.results[0].fans_received)
+				
+				$('#db_class_1_3_required').val(response.results[0].db_class_1_3_required)
+				$('#db_class_1_3_upload').val(response.results[0].db_class_1_3_upload)
+				$('#db_class_1_3_received').val(response.results[0].db_class_1_3_received)
+				
+				$('#db_class_4_7_required').val(response.results[0].db_class_4_7_required)
+				$('#db_class_4_7_upload').val(response.results[0].db_class_4_7_upload)
+				$('#db_class_4_7_received').val(response.results[0].db_class_4_7_received)
+				
+				$('#db_class_8_10_required').val(response.results[0].db_class_8_10_required)
+				$('#db_class_8_10_upload').val(response.results[0].db_class_8_10_upload)
+				$('#db_class_8_10_received').val(response.results[0].db_class_8_10_received)
+				
+				
+				$('#tables_required').val(response.results[0].tables_required)
+				$('#tables_upload').val(response.results[0].tables_upload)
+				$('#tables_received').val(response.results[0].tables_received)
+				
+				$('#chairs_required').val(response.results[0].chairs_required)
+				$('#chairs_upload').val(response.results[0].chairs_upload)
+				$('#chairs_received').val(response.results[0].chairs_received)
+				
+				$('#almirah_required').val(response.results[0].almirah_required)
+				$('#almirah_upload').val(response.results[0].almirah_upload)
+				$('#almirah_received').val(response.results[0].almirah_received)
+				
+				
+				$('#green_chalk_board_required').val(response.results[0].green_chalk_board_required)
+				$('#green_chalk_board_upload').val(response.results[0].green_chalk_board_upload)
+				$('#green_chalk_board_received').val(response.results[0].green_chalk_board_received)
+				
+				$('#englab_required').val(response.results[0].englab_required)
+				$('#englab_upload').val(response.results[0].englab_upload)
+				$('#englab_received').val(response.results[0].englab_received)
 				
 			}
 		});
@@ -74,8 +157,7 @@ $(document).ready(function() {
 	})
 	
 	
-	
-	
+	//Form submission
 		
 	$('#naduneduForm').on('submit', function(e) {
 		
@@ -95,159 +177,155 @@ $(document).ready(function() {
 		}
 		
 		var year=date.getFullYear();  
-		// $('#todayDate').html(day +"/"+month+"/"+year)
-		// $('#currentYear').html(year)
-		
+			
 		var dot = day +"/"+month+"/"+year;
 		
-		//alert('today date is ' +  dot)
 		
-		//alert('buttonclicked')
 		
 		var mandal = $('#mandal').val()
 		var school = $('#school').val()
 		
 		var funds_estimated = $('#funds_estimated').val()
-		var funds_receivedOne = $('#funds_receivedOne').val()
-		var funds_receivedTwo = $('#funds_receivedTwo').val()
+		var funds_receivedone = $('#funds_receivedone').val()
+		var funds_receivedtwo = $('#funds_receivedtwo').val()
 		var funds_expenditure = $('#funds_expenditure').val()
 		
 		var cement_company = $('#cement_company').val()
-		var cement_req = $('#cement_req').val()
+		var cement_required = $('#cement_required').val()
 		var cement_indent_placed = $('#cement_indent_placed').val()
-		var cement_rec = $('#cement_rec').val()
+		var cement_received = $('#cement_received').val()
 		
-		var sand_req = $('#sand_req').val()
+		var sand_required = $('#sand_required').val()
 		var sand_indent_placed = $('#sand_indent_placed').val()
-		var sand_rec = $('#sand_rec').val()
+		var sand_received = $('#sand_received').val()
 		
-		var metal_req = $('#metal_req').val()
-		var metal_rec = $('#metal_rec').val()
+		var metal_required = $('#metal_required').val()
+		var metal_received = $('#metal_received').val()
 		
-		var steel_req = $('#steel_req').val()
-		var steel_rec = $('#steel_rec').val()
+		var steel_required = $('#steel_required').val()
+		var steel_received = $('#steel_received').val()
 		
-		var cement_bricks_req = $('#cement_bricks_req').val()
-		var cement_bricks_rec = $('#cement_bricks_rec').val()
-		var cley_bricks_req = $('#cley_bricks_req').val()
-		var cley_bricks_rec = $('#cley_bricks_rec').val()
+		var cement_bricks_required = $('#cement_bricks_required').val()
+		var cement_bricks_received = $('#cement_bricks_received').val()
+		var country_bricks_required = $('#country_bricks_required').val()
+		var country_bricks_received = $('#country_bricks_received').val()
 		
-		var wb_req = $('#wb_req').val()
+		var wb_required = $('#wb_required').val()
 		var wb_upload = $('#wb_upload').val()
-		var wb_rec = $('#wb_rec').val()
+		var wb_received = $('#wb_received').val()
 		
-		var urinals_req = $('#urinals_req').val()
+		var urinals_required = $('#urinals_required').val()
 		var urinals_upload = $('#urinals_upload').val()
-		var urinals_rec = $('#urinals_rec').val()
+		var urinals_received = $('#urinals_received').val()
 		
-		var wc_req = $('#wc_req').val()
+		var wc_required = $('#wc_required').val()
 		var wc_upload = $('#wc_upload').val()
-		var wc_rec = $('#wc_rec').val()
+		var wc_received = $('#wc_received').val()
 		
-		var fans_req = $('#fans_req').val()
+		var fans_required = $('#fans_required').val()
 		var fans_upload = $('#fans_upload').val()
-		var fans_rec = $('#fans_rec').val()
+		var fans_received = $('#fans_received').val()
 		
-		var db_class_1_3_req = $('#db_class_1_3_req').val()
+		var db_class_1_3_required = $('#db_class_1_3_required').val()
 		var db_class_1_3_upload = $('#db_class_1_3_upload').val()
-		var db_class_1_3_rec = $('#db_class_1_3_rec').val()
+		var db_class_1_3_received = $('#db_class_1_3_received').val()
 		
-		var db_class_4_7_req = $('#db_class_4_7_req').val()
+		var db_class_4_7_required = $('#db_class_4_7_required').val()
 		var db_class_4_7_upload = $('#db_class_4_7_upload').val()
-		var db_class_4_7_rec = $('#db_class_4_7_rec').val()
+		var db_class_4_7_received = $('#db_class_4_7_received').val()
 		
-		var db_class_7_10_req = $('#db_class_7_10_req').val()
-		var db_class_7_10_upload = $('#db_class_7_10_upload').val()
-		var db_class_7_10_rec = $('#db_class_7_10_rec').val()
+		var db_class_8_10_required = $('#db_class_8_10_required').val()
+		var db_class_8_10_upload = $('#db_class_8_10_upload').val()
+		var db_class_8_10_rec = $('#db_class_8_10_received').val()
 		
-		var tables_req = $('#tables_req').val()
+		var tables_required = $('#tables_required').val()
 		var tables_upload = $('#tables_upload').val()
-		var tables_rec = $('#tables_rec').val()
+		var tables_received = $('#tables_received').val()
 		
-		var chairs_req = $('#chairs_req').val()
+		var chairs_required = $('#chairs_required').val()
 		var chairs_upload = $('#chairs_upload').val()
-		var chairs_rec = $('#chairs_rec').val()
+		var chairs_received = $('#chairs_received').val()
 		
-		var almirah_req = $('#almirah_req').val()
+		var almirah_required = $('#almirah_required').val()
 		var almirah_upload = $('#almirah_upload').val()
-		var almirah_rec = $('#almirah_rec').val()
+		var almirah_received = $('#almirah_received').val()
 		
-		var chalk_board_req = $('#chalk_board_req').val()
-		var chalk_board_upload = $('#chalk_board_upload').val()
-		var chalk_board_rec = $('#chalk_board_rec').val()
+		var green_chalk_board_required = $('#green_chalk_board_required').val()
+		var green_chalk_board_upload = $('#green_chalk_board_upload').val()
+		var green_chalk_board_received = $('#green_chalk_board_received').val()
 		
-		var tv_req = $('#tv_req').val()
-		var tv_upload = $('#tv_upload').val()
-		var tv_rec = $('#tv_rec').val()
+		var englab_required = $('#englab_required').val()
+		var englab_upload = $('#englab_upload').val()
+		var englab_received = $('#englab_received').val()
 		
 		var tagged = $('#tagged').val()
 		
+		
 		const data = {
-			dot : dot,
+			dot : date,
 			mandal : mandal,
 			school :school,
 			funds_estimated: funds_estimated,
-			funds_receivedOne : funds_receivedOne,
-			funds_receivedTwo:funds_receivedTwo,
+			funds_receivedone : funds_receivedone,
+			funds_receivedtwo:funds_receivedtwo,
 			funds_expenditure:funds_expenditure,
 			cement_company:cement_company,
-			cement_required: cement_req,
+			cement_required: cement_required,
 			cement_indent_placed: cement_indent_placed,
-			cement_received:cement_rec,
-			sand_required: sand_req,
+			cement_received:cement_received,
+			sand_required: sand_required,
 			sand_indent_placed: sand_indent_placed,
-			sand_received: sand_rec,
-			metal_required: metal_req,
-			metal_received: metal_rec,
-			steel_required: steel_req,
-			steel_received: steel_rec,
-			cement_bricks_required: cement_bricks_req,
-			cement_bricks_received:cement_bricks_rec,
-			cley_bricks_required: cley_bricks_req,
-			cley_bricks_received: cley_bricks_rec,
-			wb_required: wb_req,
+			sand_received: sand_received,
+			metal_required: metal_required,
+			metal_received: metal_received,
+			steel_required: steel_required,
+			steel_received: steel_received,
+			cement_bricks_required: cement_bricks_required,
+			cement_bricks_received:cement_bricks_received,
+			country_bricks_required: country_bricks_required,
+			country_bricks_received: country_bricks_received,
+			wb_required: wb_required,
 			wb_upload: wb_upload,
-			wb_received: wb_rec,
-			urinals_required:urinals_req,
+			wb_received: wb_received,
+			urinals_required:urinals_required,
 			urinals_upload: urinals_upload,
-			urinals_received: urinals_rec,
-			wc_required:wc_req,
+			urinals_received: urinals_received,
+			wc_required:wc_required,
 			wc_upload:wc_upload,
-			wc_received:wc_rec,
-			fans_required:fans_req,
+			wc_received:wc_received,
+			fans_required:fans_required,
 			fans_upload:fans_upload,
-			fans_received:fans_rec,
-			db_class_1_3_required:db_class_1_3_req,
+			fans_received:fans_received,
+			db_class_1_3_required:db_class_1_3_required,
 			db_class_1_3_upload:db_class_1_3_upload,
-			db_class_1_3_received:db_class_1_3_rec,
-			db_class_4_7_required:db_class_4_7_req,
+			db_class_1_3_received:db_class_1_3_received,
+			db_class_4_7_required:db_class_4_7_required,
 			db_class_4_7_upload:db_class_4_7_upload,
-			db_class_4_7_received:db_class_4_7_rec,
-			db_class_7_10_required:db_class_7_10_req,
-			db_class_7_10_upload:db_class_7_10_upload,
-			db_class_7_10_received: db_class_7_10_rec,
-			tables_required:tables_req,
+			db_class_4_7_received:db_class_4_7_received,
+			db_class_8_10_required:db_class_8_10_required,
+			db_class_8_10_upload:db_class_8_10_upload,
+			db_class_8_10_received: db_class_8_10_rec,
+			tables_required:tables_required,
 			tables_upload:tables_upload,
-			tables_received:tables_rec,
-			chairs_required:chairs_req,
+			tables_received:tables_received,
+			chairs_required:chairs_required,
 			chairs_upload:chairs_upload,
-			chairs_received:chairs_rec,
-			almirah_required: almirah_req,
+			chairs_received:chairs_received,
+			almirah_required: almirah_required,
 			almirah_upload: almirah_upload,
-			almirah_received:almirah_rec,
-			chalk_board_required:chalk_board_req,
-			chalk_board_upload:chalk_board_upload,
-			chalk_board_received:chalk_board_rec,
-			tv_required:tv_req,
-			tv_upload:tv_upload,
-			tv_received:tv_rec,
-			tagged : tagged
+			almirah_received:almirah_received,
+			green_chalk_board_required:green_chalk_board_required,
+			green_chalk_board_upload:green_chalk_board_upload,
+			green_chalk_board_received:green_chalk_board_received,
+			englab_required:englab_required,
+			englab_upload:englab_upload,
+			englab_received:englab_received,
+			tagged : tagged,
+			date_of_entry : dot
 		}
-		console.log(data)
-		console.log(mandal)
-		console.log(funds_estimated)
 		
-		// $('#naduneduForm').reset()
+		
+		// Adding New entry
 		
 			$.ajax({
 				url: '/addnew',
@@ -262,60 +340,60 @@ $(document).ready(function() {
 					$('#mandal').val('')
 					$('#school').val('')
 					$('#funds_estimated').val('')
-					$('#funds_receivedOne').val('')
-					$('#funds_receivedTwo').val('')
+					$('#funds_receivedone').val('')
+					$('#funds_receivedtwo').val('')
 					$('#funds_expenditure').val('')
 					$('#cement_company').val('')
-					$('#cement_req').val('')
+					$('#cement_required').val('')
 					$('#cement_indent_placed').val('')
-					$('#cement_rec').val('')
-					$('#sand_req').val('')
+					$('#cement_received').val('')
+					$('#sand_required').val('')
 					$('#sand_indent_placed').val('')
-					$('#sand_rec').val('')
-					$('#metal_req').val('')
-					$('#metal_rec').val('')
-					$('#steel_req').val('')
-					$('#steel_rec').val('')
-					$('#cement_bricks_req').val('')
-					$('#cement_bricks_rec').val('')
-					$('#cley_bricks_req').val('')
-					$('#cley_bricks_rec').val('')
-					$('#wb_req').val('')
+					$('#sand_received').val('')
+					$('#metal_required').val('')
+					$('#metal_received').val('')
+					$('#steel_required').val('')
+					$('#steel_received').val('')
+					$('#cement_bricks_required').val('')
+					$('#cement_bricks_received').val('')
+					$('#country_bricks_required').val('')
+					$('#country_bricks_received').val('')
+					$('#wb_required').val('')
 					$('#wb_upload').val('')
-					$('#wb_rec').val('')
-					$('#urinals_req').val('')
+					$('#wb_received').val('')
+					$('#urinals_required').val('')
 					$('#urinals_upload').val('')
-					$('#urinals_rec').val('')
-					$('#wc_req').val('')
+					$('#urinals_received').val('')
+					$('#wc_required').val('')
 					$('#wc_upload').val('')
-					$('#wc_rec').val('')
-					$('#fans_req').val('')
+					$('#wc_received').val('')
+					$('#fans_required').val('')
 					$('#fans_upload').val('')
-					$('#fans_rec').val('')
-					$('#db_class_1_3_req').val('')
+					$('#fans_received').val('')
+					$('#db_class_1_3_required').val('')
 					$('#db_class_1_3_upload').val('')
-					$('#db_class_1_3_rec').val('')
-					$('#db_class_4_7_req').val('')
+					$('#db_class_1_3_received').val('')
+					$('#db_class_4_7_required').val('')
 					$('#db_class_4_7_upload').val('')
-					$('#db_class_4_7_rec').val('')
-					$('#db_class_7_10_req').val('')
-					$('#db_class_7_10_upload').val('')
-					$('#db_class_7_10_rec').val('')
-					$('#tables_req').val('')
+					$('#db_class_4_7_received').val('')
+					$('#db_class_8_10_required').val('')
+					$('#db_class_8_10_upload').val('')
+					$('#db_class_8_10_received').val('')
+					$('#tables_required').val('')
 					$('#tables_upload').val('')
-					$('#tables_rec').val('')
-					$('#chairs_req').val('')
+					$('#tables_received').val('')
+					$('#chairs_required').val('')
 					$('#chairs_upload').val('')
-					$('#chairs_rec').val('')
-					$('#almirah_req').val('')
+					$('#chairs_received').val('')
+					$('#almirah_required').val('')
 					$('#almirah_upload').val('')
-					$('#almirah_rec').val('')
-					$('#chalk_board_req').val('')
-					$('#chalk_board_upload').val('')
-					$('#chalk_board_rec').val('')
-					$('#tv_req').val('')
-					$('#tv_upload').val('')
-					$('#tv_rec').val('')
+					$('#almirah_received').val('')
+					$('#green_chalk_board_required').val('')
+					$('#green_chalk_board_upload').val('')
+					$('#green_chalk_board_received').val('')
+					$('#englab_required').val('')
+					$('#englab_upload').val('')
+					$('#englab_received').val('')
 					$('#tagged').val('')
 					
 					//$('#naduneduForm').reset()

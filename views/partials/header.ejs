@@ -12,7 +12,7 @@
 	  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
   	  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
 
-    <title>Nadu-Nedu WG</title>
+    <title>Nadu-Nedu V2.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 	  
@@ -28,7 +28,7 @@
 	  
 	  	  <div class="container-fluid" style="padding: 0">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-					  <a class="navbar-brand" href="/">Nadu-Nedu WG</a>
+					  <a class="navbar-brand" href="/">NaduNedu V2.0</a>
 					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					  </button>
@@ -41,8 +41,15 @@
 						  <li class="nav-item">
 							<a class="nav-link" href="/">Entry</a>
 						  </li>
-							<li class="nav-item">
-							<a class="nav-link" href="/report">Report</a>
+						  <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  Reports
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							  <a class="dropdown-item" href="/report">Daily Report</a>
+							  <a class="dropdown-item" href="/creport">Cummulative Report</a>
+							  
+							</div>
 						  </li>
 						  				  
 						</ul>
@@ -75,4 +82,5 @@ if (i<10){
  }  
 return i;  
 }  
+	  
 </script> 
