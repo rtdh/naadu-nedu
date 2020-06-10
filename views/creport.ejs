@@ -6,7 +6,7 @@
 		</div>
 	</div>
 <% } else { %>
-<h6 class="text-center display-4 mt-2" style="font-size: 1.5rem; color: blue">Nadu-Nedu Daily Entry Report</h6>
+<h6 class="text-center display-4 mt-2" style="font-size: 1.5rem; color: blue">Nadu-Nedu Cummulative Report</h6>
 				
 <!-- <div class="container-fluid d-flex justify-content-center mt-3" style="overflow: scroll"> -->
 <div id="wrapper" style="overflow: scroll; padding: 2% 5%">
@@ -26,7 +26,7 @@
 				<thead style="background: rgb(41,43,44); color: white;font-size: 10px;font-weight:normal">
 					<tr>
 						<th rowspan="2">SlNo</th>
-						<th rowspan="2">Date of Entry</th>
+						<th rowspan="2">Last updated on</th>
 						<th rowspan="2">Mandal</th>
 						<th rowspan="2">School</th>
 						<th colspan="4">Funds</th>
@@ -115,9 +115,9 @@
 							<% results.forEach(function(result, i) { %>
 							<tr>
 								<td><%= i + 1 %></td>
-								<td><%= result.date_of_entry %></td>
+								<td><%= result.timestamp %></td>
 								<td><%= result.mandal %></td>
-								<td><%= result.school %></td>
+								<td><%= result.schoolname %></td>
 								<td><%= result.funds_estimated %></td>
 								<td><%= result.funds_receivedone %></td>
 								<td><%= result.funds_receivedtwo %></td>
@@ -155,9 +155,9 @@
 								<td><%= result.db_class_4_7_required %></td>
 								<td><%= result.db_class_4_7_upload %></td>
 								<td><%= result.db_class_4_7_received %></td>
-								<td><%= result.db_class_7_10_required %></td>
-								<td><%= result.db_class_7_10_upload %></td>
-								<td><%= result.db_class_7_10_received %></td>
+								<td><%= result.db_class_8_10_required %></td>
+								<td><%= result.db_class_8_10_upload %></td>
+								<td><%= result.db_class_8_10_received %></td>
 								<td><%= result.tables_required %></td>
 								<td><%= result.tables_upload %></td>
 								<td><%= result.tables_received %></td>
@@ -167,12 +167,12 @@
 								<td><%= result.almirah_required %></td>
 								<td><%= result.almirah_upload %></td>
 								<td><%= result.almirah_received %></td>
-								<td><%= result.chalk_board_required %></td>
-								<td><%= result.chalk_board_upload %></td>
-								<td><%= result.chalk_board_received %></td>
-								<td><%= result.tv_required %></td>
-								<td><%= result.tv_upload %></td>
-								<td><%= result.tv_received %></td>
+								<td><%= result.green_chalk_board_required %></td>
+								<td><%= result.green_chalk_board_upload %></td>
+								<td><%= result.green_chalk_board_received %></td>
+								<td><%= result.englab_required %></td>
+								<td><%= result.englab_upload %></td>
+								<td><%= result.englab_received %></td>
 								<td><%= result.taggedassist %></td>
 								
 							</tr>
